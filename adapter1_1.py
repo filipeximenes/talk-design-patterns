@@ -19,11 +19,13 @@ def store_post(consumer):
 
 
 facebook_consumer = FacebookConsumer('some-token')
-adapted_facebook_consumer = PostAdapter(facebook_consumer, 'get_lastest_timeline_post')
+adapted_facebook_consumer = PostAdapter(
+    facebook_consumer, 'get_lastest_timeline_post')
 
 store_post(adapted_facebook_consumer)
 
 twitter_consumer = TwitterConsumer('some-token')
-adapted_twitter_consumer = PostAdapter(twitter_consumer, 'get_lastest_tweet')
+adapted_twitter_consumer = PostAdapter(
+    twitter_consumer, 'get_lastest_tweet')
 
 store_post(adapted_twitter_consumer)

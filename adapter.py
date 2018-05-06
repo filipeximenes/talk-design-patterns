@@ -10,6 +10,7 @@ class FacebookConsumer:
         return self.make_request('some-url')
     ...
 
+
 class TwitterConsumer:
 
     def __init__(self, api_token):
