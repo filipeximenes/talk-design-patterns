@@ -1,16 +1,22 @@
-from adapter import FacebookTimelineConsumer, TwitterFeedConsumer
+from adapter import FacebookConsumer, TwitterConsumer
 
 
-class FacebookAdapter(FacebookTimelineConsumer):
+class FacebookAdapter(FacebookConsumer):
 
-	def get_post(self):
-		return super().get_latest_timeline_post()
+    def get_post(self):
+        return super().get_latest_timeline_post()
 
 
-class TwitterAdapter(TwitterFeedConsumer):
+class TwitterAdapter(TwitterConsumer):
 
-	def gest_post(self):
-		return super().get_latest_tweet()
+    def gest_post(self):
+        return super().get_latest_tweet()
+
+
+def store_post(consumer):
+    post = consumer.get_post()
+
+    database.posts(post).save()
 
 
 adapted_facebook_consumer = FacebookAdapter('some-token')
