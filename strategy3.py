@@ -30,5 +30,5 @@ def deliver_package(package):
     deliver(package)
 
 
-package = Package('Notebook', 'low')
+package = Package('Computer', 'low')
 deliver_package(package)

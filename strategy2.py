@@ -34,17 +34,27 @@ class PlaneDelivery:
         print('The ETA is 2 days')
 
 
+class PackageDeliveryStretegy:
+
+    def __init__(self, package):
+        self.package = package
+
+        if package.urgency == 'low':
+            self.DeliverStrategy = BikeDelivery
+        if package.urgency == 'medium':
+            self.DeliverStrategy = TruckDelivery
+        if package.urgency == 'high':
+            self.DeliverStrategy = PlaneDelivery
+
+    def deliver(self):
+        strategy = self.DeliverStrategy(self.package)
+        strategy.deliver()
+
+
 def deliver_package(package):
-    if package.urgency == 'low':
-        DeliverStrategy = BikeDelivery
-    if package.urgency == 'medium':
-        DeliverStrategy = TruckDelivery
-    if package.urgency == 'high':
-        DeliverStrategy = PlaneDelivery
-
-    strategy = DeliverStrategy(package)
-    strategy.deliver()
+    package_delivery = PackageDeliveryStretegy(package)
+    package_delivery.deliver()
 
 
-package = Package('Racket', 'low')
+package = Package('Computer', 'low')
 deliver_package(package)

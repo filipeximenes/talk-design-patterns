@@ -11,10 +11,10 @@ def deliver_package(package):
         print('The cost will be $30')
         print('The ETA is 13d ays')
     elif package.urgency == 'high':
-        print('The', package. content, 'is going to be delivered by Plane')
+        print('The', package.content, 'is going to be delivered by Plane')
         print('The cost will be $60')
         print('The ETA is 2 days')
 
 
-package = Package('Racket', 'low')
+package = Package('Computer', 'low')
 deliver_package(package)

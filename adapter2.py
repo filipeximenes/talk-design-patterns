@@ -1,3 +1,4 @@
+import database
 from adapter import FacebookConsumer, TwitterConsumer
 
 
