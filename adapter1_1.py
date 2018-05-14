@@ -15,7 +15,7 @@ class FacebookAdapter:
         self.consumer = facebook_consumer
 
     def get_post(self):
-        return self.consumer.get_lastest_timeline_post()
+        return self.consumer.get_latest_timeline_post()
 
 
 class TwitterAdapter:
@@ -24,13 +24,13 @@ class TwitterAdapter:
         self.consumer = twitter_consumer
 
     def get_post(self):
-        return self.consumer.get_lastest_tweet()
+        return self.consumer.get_latest_tweet()
 
 
 def store_post(consumer):
     post = consumer.get_post()
 
-    database.posts(post).save()
+    database.add_post(post)
 
 
 facebook_consumer = FacebookConsumer('some-token')

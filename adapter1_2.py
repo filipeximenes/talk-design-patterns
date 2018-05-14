@@ -16,17 +16,17 @@ class PostAdapter:
 def store_post(consumer):
     post = consumer.get_post()
 
-    database.posts(post).save()
+    database.add_post(post)
 
 
 facebook_consumer = FacebookConsumer('some-token')
 adapted_facebook_consumer = PostAdapter(
-    facebook_consumer, 'get_lastest_timeline_post')
+    facebook_consumer, 'get_latest_timeline_post')
 
 store_post(adapted_facebook_consumer)
 
 twitter_consumer = TwitterConsumer('some-token')
 adapted_twitter_consumer = PostAdapter(
-    twitter_consumer, 'get_lastest_tweet')
+    twitter_consumer, 'get_latest_tweet')
 
 store_post(adapted_twitter_consumer)

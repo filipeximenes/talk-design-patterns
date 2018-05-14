@@ -3,15 +3,15 @@ from adapter import FacebookConsumer, TwitterConsumer
 
 
 def store_timeline_post(facebook_consumer):
-    post = facebook_consumer.get_lastest_timeline_post()
+    post = facebook_consumer.get_latest_timeline_post()
 
-    database.posts(post).save()
+    database.add_post(post)
 
 
 def store_tweet(twitter_consumer):
-    tweet = twitter_consumer.get_lastest_tweet()
+    tweet = twitter_consumer.get_latest_tweet()
 
-    database.posts(tweet).save()
+    database.add_post(tweet)
 
 
 facebook_consumer = FacebookConsumer('some-token')

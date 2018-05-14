@@ -10,14 +10,14 @@ class FacebookAdapter(FacebookConsumer):
 
 class TwitterAdapter(TwitterConsumer):
 
-    def gest_post(self):
+    def get_post(self):
         return super().get_latest_tweet()
 
 
 def store_post(consumer):
     post = consumer.get_post()
 
-    database.posts(post).save()
+    database.add_post(post)
 
 
 adapted_facebook_consumer = FacebookAdapter('some-token')
