@@ -10,7 +10,7 @@ def bike_deliver(package):
 def truck_deliver(package):
     print('The', package.content, 'is going to be delivered by Truck')
     print('The cost will be $30')
-    print('The ETA is 13d ays')
+    print('The ETA is 13 days')
 
 
 def plane_deliver(package):

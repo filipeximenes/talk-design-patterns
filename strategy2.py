@@ -20,7 +20,7 @@ class TruckDelivery:
     def deliver(self):
         print('The', self.package.content, 'is going to be delivered by Truck')
         print('The cost will be $30')
-        print('The ETA is 13d ays')
+        print('The ETA is 13 days')
 
 
 class PlaneDelivery:
@@ -34,7 +34,7 @@ class PlaneDelivery:
         print('The ETA is 2 days')
 
 
-class PackageDeliveryStretegy:
+class PackageDeliveryStrategy:
 
     def __init__(self, package):
         self.package = package
@@ -52,7 +52,7 @@ class PackageDeliveryStretegy:
 
 
 def deliver_package(package):
-    package_delivery = PackageDeliveryStretegy(package)
+    package_delivery = PackageDeliveryStrategy(package)
     package_delivery.deliver()
 
 

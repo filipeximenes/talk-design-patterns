@@ -2,13 +2,13 @@ import database
 from adapter import FacebookConsumer, TwitterConsumer
 
 
-class PostRetriver:
+class PostRetriever:
 
     def get_post(self):
         raise NotImplementedError()
 
 
-class FacebookAdapter(PostRetriver):
+class FacebookAdapter(PostRetriever):
 
     def __init__(self, facebook_consumer):
         self.consumer = facebook_consumer
@@ -17,7 +17,7 @@ class FacebookAdapter(PostRetriver):
         return self.consumer.get_latest_timeline_post()
 
 
-class TwitterAdapter(PostRetriver):
+class TwitterAdapter(PostRetriever):
 
     def __init__(self, twitter_consumer):
         self.consumer = twitter_consumer
