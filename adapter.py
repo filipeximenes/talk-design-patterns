@@ -1,3 +1,5 @@
+from time import sleep
+
 
 class FacebookConsumer:
 
@@ -8,7 +10,10 @@ class FacebookConsumer:
         ...
 
     def get_latest_timeline_post(self):
+        print('Posting to Facebook')
+        sleep(1)
         return self.make_request('some-url')
+
     ...
 
 
@@ -21,5 +26,8 @@ class TwitterConsumer:
         ...
 
     def get_latest_tweet(self):
+        print('Posting to Twitter')
+        sleep(1)
         return self.make_request('some-url')
+
     ...
