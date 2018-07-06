@@ -10,7 +10,7 @@ class FacebookConsumer:
         ...
 
     def get_latest_timeline_post(self):
-        print('Posting to Facebook')
+        print('Fetching from Facebook')
         sleep(1)
         return self.make_request('some-url')
 
@@ -26,7 +26,7 @@ class TwitterConsumer:
         ...
 
     def get_latest_tweet(self):
-        print('Posting to Twitter')
+        print('Fetching from Twitter')
         sleep(1)
         return self.make_request('some-url')
 
