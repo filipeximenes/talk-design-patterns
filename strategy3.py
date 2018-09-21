@@ -19,16 +19,17 @@ def plane_deliver(package):
     print('The ETA is 2 days')
 
 
-def deliver_package(package):
+def get_strategy(package):
     if package.urgency == 'low':
-        deliver = bike_deliver
+        strategy = bike_deliver
     if package.urgency == 'medium':
-        deliver = truck_deliver
+        strategy = truck_deliver
     if package.urgency == 'high':
-        deliver = plane_deliver
+        strategy = plane_deliver
 
-    deliver(package)
+    return strategy
 
 
 package = Package('Computer', 'low')
-deliver_package(package)
+deliver = get_strategy(package)
+deliver()

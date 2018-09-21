@@ -34,7 +34,7 @@ class PlaneDelivery:
         print('The ETA is 2 days')
 
 
-class PackageDeliveryStrategy:
+class StrategySelector:
 
     def __init__(self, package):
         self.package = package
@@ -51,10 +51,6 @@ class PackageDeliveryStrategy:
         strategy.deliver()
 
 
-def deliver_package(package):
-    package_delivery = PackageDeliveryStrategy(package)
-    package_delivery.deliver()
-
-
 package = Package('Computer', 'low')
-deliver_package(package)
+strategy = StrategySelector(package)
+strategy.deliver()
